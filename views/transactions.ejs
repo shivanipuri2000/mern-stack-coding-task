@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  
+    <section>
+      <h2>Transactions Table</h2>
+      <form action="/transactions" method="GET">
+        <label for="month">Select Month:</label>
+        <select  name="month" id="month">
+          
+            <% getmonth.forEach(month=> { %>
+            <option>
+              <%=month%>
+            </option>
+          <% }) %>
+          
+
+        </select>
+        <input type="text" name="search" placeholder="Search...">
+        <button type="submit">Search</button>
+      </form>
+<br>
+<br>
+
+      <table border="1">
+       
+          <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+          </tr>
+        
+          <tr>
+          <% transactions.forEach(transaction=> { %>
+            <tr>
+              <td>
+                <%=transaction.dateOfSale %>
+              </td>
+              <td>
+                <%=transaction.productTitle %>
+              </td>
+              <td>
+                <%=transaction.description %>
+              </td>
+              <td>
+                <%=transaction.price %>
+              </td>
+              <td>
+                <%=transaction.category %>
+              </td>
+            </tr>
+            <% }) %>
+
+        
+      </table>
+    </section>
+    <script src="../public/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  statistics.ejs
+  <%- include('layout', { bodyClass: 'statistics' }) %>
+  
+    <section>
+      <h2>Transactions Statistics</h2>
+      <p>Total Sale Amount: <%= statistics.totalSaleAmount %>
+      </p>
+      <p>Total Sold Items: <%= statistics.totalSoldItems %>
+      </p>
+      <p>Total Not Sold Items: <%= statistics.totalNotSoldItems %>
+      </p>
+    </section>
+</body>
+</html>
